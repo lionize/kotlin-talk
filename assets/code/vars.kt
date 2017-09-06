@@ -19,3 +19,6 @@ val test = Test()
 
 val list: List<String>
 list = listOf("Hello")
+
+val str: String?
+str = null

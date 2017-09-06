@@ -1,27 +1,34 @@
-// pattern matching 'switch'
 when (x) {
-  1, 2 -> print("x == 1 or x == 2")
-  3 -> print("x == 3")
+  1 -> print("$x == 1")
+  2 -> print("$x == 2")
+  3 -> print("$x == 3")
   else -> { // required in case not all match
-    print("x is neither 1 nor 2 nor 3")
+    print("$x is neither 1 nor 2 nor 3")
   }
 }
 
-// check range
 when (x) {
-  in 1..10 -> print("x is in the range")
-  in validNumbers -> print("x is valid")
-  !in 10..20 -> print("x is outside the range")
-  else -> print("none of the above")
+  1, 2 -> print("$x == 1 || $x == 2")
+  else -> print("$x is neither 1 nor 2")
 }
 
-// smart casts
-fun hasPrefix(x: Any) = when(x) {
+when (x) {
+  in 1..10 -> print("$x is in the range")
+  !in 10..20 -> print("$x is outside the range")
+}
+
+val validNumbers = listOf(1, 2, 3)
+val x = 2
+when (x) {
+  in validNumbers -> print("$x is valid")
+  else -> print("$x is not in list of valid numbers ($validNumbers)")
+}
+
+fun hasPrefix(x: Any) = when (x) {
   is String -> x.startsWith("prefix")
   else -> false
 }
 
-// conditional
 when {
   x.isOdd() -> print("x is odd")
   x.isEven() -> print("x is even")

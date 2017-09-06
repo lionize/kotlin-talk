@@ -1,16 +1,18 @@
 enum class Direction {
   NORTH, SOUTH, WEST, EAST
 }
+val currentDirection = Direction.NORTH
 
-// enum classes can be initialized
 enum class Direction(val distance: String) {
   NORTH("far"),
   SOUTH("near"),
   WEST("super near"),
   EAST("super far")
 }
+val direction = Direction.SOUTH
+println(direction) // SOUTH
+println(direction.distance) // near
 
-// use enum constants as anonymous classes
 enum class ProtocolState {
   WAITING {
     override fun signal() = TALKING

@@ -1,34 +1,29 @@
-// basic function
-fun print_string(string: String): Unit {
+fun printString(string: String): Unit {
   println(string)
 }
 
-// omit Unit return
-fun print_string(string: String) {
+fun printString(string: String) {
   println(string)
 }
 
-// return type
-fun echo_string(string: String): String {
+fun echoString(string: String): String {
   return string
 }
 
-// single-expression function
-fun echo_string(string: String) = string
+fun echoString(string: String) = string
 
-// default arguments
-fun default_args(adjective: String = "Best", name: String = "Mark") {
+fun defaultArgs(adjective: String = "Best", name: String = "Mark") {
   println("$adjective $name")
 }
-default_args() // "Best Mark"
-default_args("Coolest", "Curtis") // "Coolest Curtis"
-default_args(name = "David") // "Best David"
-default_args(name = "Kole", adjective = "Krazy") // "Krazy Kole"
+defaultArgs() // "Best Mark"
+defaultArgs("Coolest", "Curtis") // "Coolest Curtis"
+defaultArgs(name = "David") // "Best David"
+defaultArgs(name = "Kole", adjective = "Krazy") // "Krazy Kole"
 
-// variable number of arguments
 fun printArgs(vararg items: String) {
-  for (t in ts) {
-    println(t)
+  for (i in items) {
+    println(i)
   }
 }
+printArgs("hello", "world") // "hello" "world"
 

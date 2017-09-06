@@ -1,4 +1,8 @@
-// object expressions -- anonymous class that inherits from some type(s)
+val adHoc = object {
+  var x: Int = 0
+  var y: Int = 0
+}
+
 window.addMouseListener(object : MouseAdapter() {
   override fun mouseClick(e: MouseEvent) {
     // ...
@@ -9,13 +13,6 @@ window.addMouseListener(object : MouseAdapter() {
   }
 })
 
-// can hold properties
-val adHoc = object {
-  var x: Int = 0
-  var y: Int = 0
-}
-
-// can access enclosing scope
 fun countClicks(window: JComponent) {
   var clickCount = 0
   var enterCount = 0
@@ -31,7 +28,6 @@ fun countClicks(window: JComponent) {
   })
 }
 
-// object declaration -- singleton
 object DataProviderManager {
   fun registerDataProvider(provider: DataProvider) {
     // ...
@@ -42,17 +38,13 @@ object DataProviderManager {
 }
 DataProviderManager.registerDataProvider(...)
 
-// companion objects
 class MyClass {
   companion object Factory {
     fun create(): MyClass = MyClass()
   }
 }
-// call members using class name as qualifier
 val instance = MyClass.create()
 
-// look like static members but are instances members of real objects
-// can implement interfaces
 interface Factory<T> {
   fun create(): T
 }

@@ -13,8 +13,8 @@ val zip = person?.city?.zip
 val listWithNulls: List<String?> = listOf("A", null)
 for (item in listWithNulls) {
   item?.let {
-    println(it)
-    println(it.length)
+    println(item)
+    println(item.length)
   }
 }
 

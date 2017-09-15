@@ -13,8 +13,8 @@ when (x) {
 }
 
 when (x) {
-  in 1..10 -> print("$x is in the range")
-  !in 10..20 -> print("$x is outside the range")
+  in 1..10 -> print("$x is in the range 1..10")
+  else -> print("$x is outside the range 1..10")
 }
 
 val validNumbers = listOf(1, 2, 3)

@@ -98,7 +98,7 @@ class ClassTest {
   }
 }
 
-data class Person(val name: String) {
+class Person(val name: String) {
   constructor(name: String, parentList: MutableList<Person>) : this(name) {
     parentList.add(this)
   }
